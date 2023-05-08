@@ -1,13 +1,24 @@
 const repeatString = function (string, num) {
   let newString = "";
-  for (i = 1; i <= num; i++) {
-    newString += string;
+  if (num >= 0) {
+    for (i = 1; i <= num; i++) {
+      newString += string;
+    }
+  } else if (string == "") {
+    return "";
+  } else {
+    return "ERROR";
   }
 
   return newString;
 };
 
-repeatString("hey", 3);
+const randomNumber = function () {
+  let random = Math.floor(Math.random() * 1000);
+  return random;
+};
+
+repeatString("hey", randomNumber());
 
 // Do not edit below this line
 module.exports = repeatString;
